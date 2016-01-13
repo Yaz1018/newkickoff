@@ -32,10 +32,10 @@ var height = $('body').css('height');
 
 function animation() {
 
-    var randomTime = (Math.floor(Math.random() * 20000) + 15000);
+    var randomTime = (Math.floor(Math.random() * 30000) + 15000);
     var outterRandomTime = randomTime + 500;
 
-    setInterval(function () {
+    setInterval(function startAnimation() {
         var make = function () {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -86,12 +86,14 @@ function animation() {
             //set bottom to the top of image so it starts off frame
             var daimghieght = -(imgheight) - (imgheight / 2);
             //Randomize where the image will show on the x axis
-            var randomWidth = Math.floor(Math.random() * (width + (randomSize / 2)) - (randomSize / 2));
+            var randomWidth = Math.floor(Math.random() * (width - (randomSize)));
             //Start animation chain
             $(themake).css({
                 left: randomWidth + 'px',
                 bottom: daimghieght + 'px'
             });
+            console.log(randomTime)
+            console.log(outterRandomTime)
 
             $(function () {
                 $(themake).animate({
@@ -101,12 +103,21 @@ function animation() {
                 setInterval(function () {
                     $(themakeimg).remove();
                     $(themake).remove();
-                }, outterRandomTime, 'linear');
+                }, randomTime, 'linear');
             });
         });
-    }, outterRandomTime); //interval to keep loop going
+    }, outterRandomTime);
+    //interval to keep loop going
 }
 
+animation();
+animation();
+animation();
+animation();
+animation();
+animation();
+animation();
+animation();
 animation();
 animation();
 animation();
