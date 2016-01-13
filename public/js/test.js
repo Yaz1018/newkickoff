@@ -18,7 +18,6 @@ bucket.listObjects(function (err, data) {
     } else {
         for (var i = 0; i < data.Contents.length; i++) {
             theimg.push(data.Contents[i].Key);
-            //console.log(data.Contents[i].Key);
 
         }
     }
@@ -28,7 +27,6 @@ bucket.listObjects(function (err, data) {
 var width = parseInt($('body').css('width'), 10);
 //get height of the container
 var height = $('body').css('height');
-//get negative values of div heigth to start div off the screen
 
 function animation() {
 
