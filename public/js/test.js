@@ -86,7 +86,7 @@ function animation() {
             //set bottom to the top of image so it starts off frame
             var daimghieght = -(imgheight) - (imgheight / 2);
             //Randomize where the image will show on the x axis
-            var randomWidth = Math.floor(Math.random() * (width) - randomSize);
+            var randomWidth = Math.floor(Math.random() * (width + (randomSize / 2)) - (randomSize / 2));
             //Start animation chain
             $(themake).css({
                 left: randomWidth + 'px',
