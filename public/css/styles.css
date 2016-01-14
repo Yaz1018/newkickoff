@@ -14,9 +14,9 @@ body {
     padding: 0;
     background: white;
     overflow: hidden;
-    background-image: url(/images/everyone_everyrun.png);
+    background-image: url(/images/horizontal_blue_with_yellow.png), url(/images/everyone_everyrun.png);
     background-attachment: fixed;
-    background-position: center;
+    background-position: 50% 10%, 50% 80%;
     background-repeat: no-repeat;
 }
 
