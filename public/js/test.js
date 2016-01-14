@@ -90,8 +90,6 @@ function animation() {
                 left: randomWidth + 'px',
                 bottom: daimghieght + 'px'
             });
-            console.log(randomTime)
-            console.log(outterRandomTime)
 
             $(function () {
                 $(themake).animate({
