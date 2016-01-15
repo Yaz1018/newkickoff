@@ -35,23 +35,11 @@ function animation() {
     var outterRandomTime = randomTime + 500;
 
     (function startAnimation() {
-        var make = function () {
-            var text = "";
-            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-            for (var i = 0; i < 10; i++)
-                text += possible.charAt(Math.floor(Math.random() * possible.length));
+        var themake = $("<div/>");
+        var themakeimg = $("<img/>");
 
-            return text;
-        };
-
-        var a = make();
-        var b = make();
-
-        var themake = '#' + a;
-        var themakeimg = '#' + b;
-
-        $("body").append("<div id=" + a + "><img id=" + b + "></div>");
+        $("body").append($(themake).append(themakeimg));
         var imgheight;
         $(themake).css({
             display: 'none'
@@ -73,17 +61,15 @@ function animation() {
                 display: 'block'
             });
 
-            var img = $(themake + " > img");
-            //set div and image to same dimensions
             $(themake).css({
-                width: img.width(),
-                height: img.height(),
+                width: themakeimg.width(),
+                height: themakeimg.height(),
             });
 
             imgheight = $(this).height();
 
             //set bottom to the top of image so it starts off frame
-            var daimghieght = -(imgheight) - (imgheight / 2);
+            var daimghieght = -(imgheight);
             //Randomize where the image will show on the x axis
             var randomWidth = Math.floor(Math.random() * (width - (randomSize)));
             //Start animation chain
