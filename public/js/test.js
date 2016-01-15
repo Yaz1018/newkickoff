@@ -23,17 +23,18 @@ bucket.listObjects(function (err, data) {
     }
 });
 
-//get width of the container
-var width = parseInt($('body').css('width'), 10);
-//get height of the container
-var height = $('body').css('height');
+
 
 function animation() {
+    //get width of the container
+    var width = parseInt($('body').css('width'), 10);
+    //get height of the container
+    var height = $('body').css('height');
 
     var randomTime = (Math.floor(Math.random() * 30000) + 15000);
     var outterRandomTime = randomTime + 500;
 
-    setInterval(function startAnimation() {
+    (function startAnimation() {
         var make = function () {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -102,20 +103,8 @@ function animation() {
                 }, randomTime, 'linear');
             });
         });
-    }, outterRandomTime);
+    })();
     //interval to keep loop going
 }
 
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
-animation();
+setInterval(animation, 3000);
